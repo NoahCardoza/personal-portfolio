@@ -1,0 +1,238 @@
+
+
+$background-color: #242424;
+$text-color: #fff;
+
+$pink: #fd5382;
+$purple: #6d0095;
+$green: #009587;
+$blue: #00dcff;
+$grey: #333233;
+
+
+$z-layers: (
+	modal				: 200,
+	navigation			: 100,
+	divider				: 90,
+	footer				: 80,
+	triangle			: 60,
+	navigation-rainbow	: 50,
+);
+
+@function z-index($layer) {
+  @return map-get($z-layers, $layer);
+}
+
+
+@mixin gradient($direction, $start, $end){
+	background: $start;
+  	background: -webkit-linear-gradient($direction, $start , $end);
+  	background: -o-linear-gradient($direction, $start, $end); 
+	background: -moz-linear-gradient($direction, $start, $end);
+  	background: linear-gradient(to $direction, $start, $end);
+}
+
+@mixin animate($argv){
+	-webkit-animation: $argv;
+	-moz-animation:    $argv;
+	-o-animation:      $argv;
+	animation:         $argv;
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+%gradient-header {
+	// #950090, #ff006a
+	// @include gradient(left, $green , $blue);
+	@include gradient(left, #950090, #ff006a);
+}
+
+%gradient-invert {
+	@include gradient(left, $pink, $purple);
+}
+
+* {
+	font-family: Verdana;
+	color: $text-color;
+	box-sizing: border-box;
+}
+
+body {
+	padding: {
+		top: 45px;
+	};
+	background-color: $background-color;
+	position: relative;
+	margin: 0;
+
+}
+
+.wrapper {
+  min-height: calc(100vh - 45px);
+  margin-bottom: -70px;
+}
+
+.footer, .push {
+  height: 70px;
+}
+
+a {
+	color: $pink;
+	text-decoration: none;
+	border-bottom: $pink 2px solid;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	@include transition(color 500ms, border 500ms);
+	&:hover, &:focus {
+		outline: none;
+		color: white;
+		border-bottom-color: $green;
+		background-color: #FFF1;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	display: block;
+	margin: 0;
+}
+
+$nav-hight: 15px;
+
+.navbar {
+	// @extend %gradient-header;
+	background-color: $green;
+	z-index: z-index('navigation');
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	text-align: center;
+	box-shadow: 0px 0px 5px 0px #000;
+	display: flex;
+	& .link {
+		background-color: transparent;
+		border: none;
+		border-radius: 0;
+		color: inherit;
+		flex-grow: 1;
+		padding: $nav-hight 20px;
+		@include transition(background-color 500ms);
+		background-color: transparent;
+		&:hover, &:focus {
+			background-color: rgba(255,255,255,0.4);
+			outline: none;
+		}
+	}
+}
+
+[data-nav="localhost"] .navbar .link#localhost, [data-nav="about"] .navbar .link#about, [data-nav="contact"] .navbar .link#contact{
+	font-weight:bold;
+	flex-grow: 2;
+	font-weight: bold;
+	background-color: rgba(255,255,255,0.4);
+}
+
+[class^="spacer-"] {
+	text-align: center;
+	@extend %gradient-header;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	z-index: 2;
+	&:before {
+		@include transition(opacity 1s);
+		z-index: -1;
+		opacity: 0;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		@extend %gradient-invert;
+	}
+	&:hover {
+		&:before {opacity: 1;}
+	}
+}
+
+.spacer {
+	&-sm {height: 70px;}
+	&-md {height: 130px;}
+	&-lg {height: 200px;}
+}
+
+.divider {
+	position: relative;
+	text-align: center;
+	z-index: z-index('divider');
+	display: flex;
+    align-items: center;
+    justify-content: center;
+	padding: 10px;
+	// background-color: $grey;
+	background-color: $green;
+	box-shadow: 0px 0px 5px 0px #000;
+}
+
+.main {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	// margin-top: 50%;
+    // transform: translateY(-50%);
+	height: 100%;
+	padding: 20px 30px;
+	article {
+		max-width: 500px;
+		border-left: solid 3px $pink;
+		padding-left: 10px;
+	}
+}
+
+%input {
+	width: 100%;
+	font-size: 16px;
+	background-color: transparent;
+	padding: 10px 15px;
+	margin-top: 10px;
+	background-color: #FFF1;
+	color: white;
+	&:focus{
+		outline: none;
+		border-color: white;
+	}
+}
+
+[type="password"],[type="email"],[type="text"], textarea {
+	border: none;
+	border-bottom: $pink 2px solid;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+	@extend %input;
+}
+
+textarea {
+	height: 200px;
+	resize: vertical;
+	min-height: 42px;
+}
+
+[type="submit"]{
+	@extend %input;
+	border: $pink 2px solid;
+}
+
+
+#contact-form {
+	width: 100%;
+	& [type="submit"] {
+		width: 100%;
+	}
+}
