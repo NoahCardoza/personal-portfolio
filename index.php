@@ -17,16 +17,6 @@
 				<sub>A brief history of the universe and more specifically this site.</sub>
 				<p>This website is the product of hard work and a passion for design. Not really, it was just plain fun.</p>
 			</article>
-			<!-- <div class="block-msg-md">
-				<span class="anchor" id="contact"></span>
-				<h2 class="block-center">Contact</h2>
-				<p>If you have any concerns, comments, or death threats, those go here.</p>
-				<form id="userinput" style="width: 100%;" method="POST" action="http://battleofthe.net">
-					<input type="email" name="email" placeholder="Email (optional)">
-					<textarea name="msg" class="msg-input" placeholder="Type your heart out!"></textarea>
-					<input type="submit" value="Submit">
-				</form>
-			</div> -->
 		</section>
 		<div class="push"></div>
 	</div>
