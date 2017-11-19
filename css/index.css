@@ -6,11 +6,11 @@
   background: linear-gradient(to right, #fd5382, #6d0095); }
 
 [class^="spacer-"]:before {
-  background-color: #fd5382;
-  background: -webkit-linear-gradient(left, #fd5382, #ffc800);
-  background: -o-linear-gradient(left, #fd5382, #ffc800);
-  background: -moz-linear-gradient(left, #fd5382, #ffc800);
-  background: linear-gradient(to left, #fd5382, #ffc800); }
+  background-color: #fab9d7;
+  background: -webkit-linear-gradient(right, #fab9d7, #fd5382);
+  background: -o-linear-gradient(right, #fab9d7, #fd5382);
+  background: -moz-linear-gradient(right, #fab9d7, #fd5382);
+  background: linear-gradient(to right, #fab9d7, #fd5382); }
 
 .navbar, .divider, [type="password"], [type="email"], [type="text"], textarea, [type="submit"] {
   box-shadow: 0px 0px 5px 0px #000; }
@@ -91,7 +91,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 2; }
+  z-index: 1; }
   [class^="spacer-"]:before {
     -moz-transition: opacity 1s;
     -o-transition: opacity 1s;

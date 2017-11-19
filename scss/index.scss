@@ -2,6 +2,8 @@ $background-color: #242424;
 $text-color: #fff;
 
 $pink: #fd5382;
+$pink-lighter: #fab9d7;
+
 $purple: #6d0095;
 $green: #009587;
 $blue: #00dcff;
@@ -58,7 +60,7 @@ $z-layers: (
 }
 
 %gradient-invert {
-	@include gradient(left, $pink, #ffc800);
+	@include gradient(right, $pink-lighter, $pink);
 }
 
 %box-shadow { box-shadow: 0px 0px 5px 0px #000; }
@@ -149,7 +151,7 @@ $nav-hight: 15px;
 	align-items: center;
 	justify-content: center;
 	position: relative;
-	z-index: 2;
+	z-index: 1;
 	&:before {
 		@include transition(opacity 1s);
 		z-index: -1;
