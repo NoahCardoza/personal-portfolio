@@ -27,7 +27,7 @@ $z-layers: (
 
 
 @mixin gradient($direction, $start, $end){
-	background: $start;
+	background-color: $start;
   	background: -webkit-linear-gradient($direction, $start , $end);
   	background: -o-linear-gradient($direction, $start, $end); 
 	background: -moz-linear-gradient($direction, $start, $end);
@@ -109,7 +109,6 @@ h1, h2, h3, h4, h5, h6 {
 $nav-hight: 15px;
 
 [data-nav="localhost"] .navbar .link#localhost, [data-nav="about"] .navbar .link#about, [data-nav="contact"] .navbar .link#contact{
-	font-weight:bold;
 	flex-grow: 2;
 	font-weight: bold;
 	background-color: $transparent-lighten;
