@@ -9,9 +9,9 @@
 <body>
 	<div class="wrapper">
 		<? include("navbar.html") ?>
-		<section class="spacer-lg"><h1>A &#xDF;it About Me!</h1></section>
+		<div class="spacer-lg"><h1>A &#xDF;it About Me!</h1></div>
 		<div class="divider"><span>Time to bring back the Beta &#xDF;!</span></div>
-		<section class="main">
+		<div class="main">
 			<article>
 				<h2>Me</h2>
 				<sub>Noah Cardoza - Attends <a target="_blank" href="https://www.deanza.edu/">De Anza</a></sub>
@@ -19,7 +19,7 @@
 					<p>I spend my free time messing around with my Mac Book Pro and starting all kinds of wacky projects.</p>
 					<p>Stay toned for more!</p>
 			</article>
-		</section>
+		</div>
 		<div class="push"></div>
 	</div>
 	<?include("footer.html");?>

@@ -31,7 +31,7 @@
 <body>
 	<div class="wrapper">
 		<?include("navbar.html");?>
-		<section class="spacer-lg"><h1>
+		<div class="spacer-lg"><h1>
 			<?
 				if (isset($_POST['message']) && isset($_POST['email'])){
 					// $endl = "\n";
@@ -50,9 +50,9 @@
 					echo("Gmail Is The New Email");
 				}
 			?>	
-		</h1></section>
+		</h1></div>
 		<div class="divider"><span>I say all publicity is good publicity, except spam!</span></div>
-		<section class="main">
+		<div class="main">
 			<article>
 				<h2>Contact</h2>
 				<sub>If you have any comments, concerns, or death threats, those go here.</sub>
@@ -62,7 +62,7 @@
 					<input type="submit" value="Submit">
 				</form>
 			</article>
-		</section>
+		</div>
 		<div class="push"></div>
 	</div>
 	<?include("footer.html");?>

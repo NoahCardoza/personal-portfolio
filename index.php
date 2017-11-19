@@ -9,15 +9,15 @@
 <body>
 	<div class="wrapper">
 		<? include("navbar.html") ?>
-		<section class="spacer-lg"><h1>Welcome To My  127.0.0.1</h1></section>
+		<div class="spacer-lg"><h1>Welcome To My  127.0.0.1</h1></div>
 		<div class="divider"><span>I'm glad you're here! Poke around and have some fun!</span></div>
-		<section class="main">
+		<div class="main">
 			<article>
 				<h2>Origins</h2>
 				<sub>A brief history of the universe and more specifically this site.</sub>
 				<p>This website is the product of hard work and a passion for design. Not really, it was just plain fun.</p>
 			</article>
-		</section>
+		</div>
 		<div class="push"></div>
 	</div>
 	<?include("footer.html");?>
