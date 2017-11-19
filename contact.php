@@ -42,8 +42,8 @@ function ip()
 					$contents .= "--- START MESSAGE ---" . $endl;
 					$contents .= (isset($_POST['message']) ? $_POST['message'] : 'NONE') . $endl;
 					$contents .= (isset($_POST['message']) ? $_POST['message'] : 'NONE') . $endl;
-					if (!is_dir('messages')){
-						mkdir('messages', 0777);
+					if (!is_dir('./messages')){
+						mkdir('./messages', 0777);
 					}
 					file_put_contents('./messages/' . $date . '.msg', $contents);
 					echo("Thanks For Your Input!");
