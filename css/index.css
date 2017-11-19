@@ -18,7 +18,8 @@
 * {
   font-family: Verdana, Arial, sans-serif;
   color: #fff;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  background-color: #242424; }
 
 body {
   padding-top: 45px;
@@ -51,7 +52,8 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
   display: block;
-  margin: 0; }
+  margin: 0;
+  background-color: transparent; }
 
 [data-nav="localhost"] .navbar .link#localhost, [data-nav="about"] .navbar .link#about, [data-nav="contact"] .navbar .link#contact {
   flex-grow: 2;
