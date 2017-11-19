@@ -44,7 +44,7 @@ function ip()
 					if (!is_dir('./messages')){
 						mkdir('./messages', 0777);
 					}
-					file_put_contents('./messages/' . $date . '.msg', $contents);
+					var_dump(file_put_contents('./messages/' . $date . '.msg', $contents));
 					echo("Thanks For Your Input!");
 				} else {
 					echo("Gmail Is The New Email");
