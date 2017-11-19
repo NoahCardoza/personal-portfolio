@@ -2,19 +2,19 @@
 <html lang="en" data-nav="localhost">
 <head>
 	<title>Localhost - Noah Cardoza</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<?include("head.html");?>
 </head>
 <body>
 	<div class="wrapper">
-		<? include("navbar.html") ?>
+		<?include("navbar.html");?>
 		<div class="spacer-lg"><h1>Welcome To My  127.0.0.1</h1></div>
 		<div class="divider"><span>I'm glad you're here! Poke around and have some fun!</span></div>
 		<div class="main">
 			<article>
-				<h2>Origins</h2>
-				<sub>A brief history of the universe and more specifically this site.</sub>
+				<div class='title'>
+					<h2>Origins</h2>
+					<sub>A brief history of the universe and more specifically this site.</sub>
+				</div>
 				<p>This website is the product of hard work and a passion for design. Not really, it was just plain fun.</p>
 			</article>
 		</div>

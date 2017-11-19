@@ -24,9 +24,7 @@
 <html lang="en" data-nav="contact">
 <head>
 	<title>Contact - Noah Cardoza</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"/>
-	<link rel="stylesheet" type="text/css" href="css/index.css">
+	<?include("head.html");?>
 </head>
 <body>
 	<div class="wrapper">
@@ -54,8 +52,10 @@
 		<div class="divider"><span>I say all publicity is good publicity, except spam!</span></div>
 		<div class="main">
 			<article>
-				<h2>Contact</h2>
-				<sub>If you have any comments, concerns, or death threats, those go here.</sub>
+				<div class='title'>
+					<h2>Contact</h2>
+					<sub>If you have any comments, concerns, or death threats, those go here.</sub>
+				</div>
 				<form id="contact-form" method="POST">
 					<input type="email" name="email" placeholder="Email (optional)">
 					<textarea spellcheck="false" name="message" class="msg-input" placeholder="Type your heart out!"></textarea>

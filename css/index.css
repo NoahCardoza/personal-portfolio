@@ -135,6 +135,9 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 500px;
     border-left: solid 3px #fd5382;
     padding: 15px; }
+    .main article .title {
+      padding-bottom: 15px;
+      border-bottom: #009587 2px solid; }
 
 [type="password"], [type="email"], [type="text"], textarea, [type="submit"] {
   width: 100%;
@@ -168,5 +171,17 @@ textarea {
   width: 100%; }
   #contact-form [type="submit"] {
     width: 100%; }
+
+.float-right {
+  float: right; }
+
+.logo-sm {
+  height: 50px;
+  width: 50px;
+  vertical-align: middle;
+  background: url("../icon-big.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }
 
 /*# sourceMappingURL=index.css.map */

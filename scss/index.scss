@@ -200,6 +200,10 @@ $nav-hight: 15px;
 		max-width: 500px;
 		border-left: solid $border-width + 1 $pink;
 		padding: 15px;
+		& .title {
+			padding-bottom: 15px;
+			border-bottom: $green $border-width solid;
+		}
 	}
 }
 
@@ -239,10 +243,37 @@ textarea {
 	border: $pink $border-width solid;
 }
 
-
 #contact-form {
 	width: 100%;
 	& [type="submit"] {
 		width: 100%;
 	}
 }
+
+.float-right {
+	float: right;
+}
+
+.logo-sm {
+	// padding: 25px;
+	height: 50px;
+	width: 50px;
+	vertical-align: middle;
+	background: url("../icon-big.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    // background-attachment: fixed;
+    background-position: center; 
+	// max-width:100%;
+	// max-height:100%;
+	// object-fit: scale-down;
+ //    float: right;
+}
+
+// .img-responsive {
+//     background: url(yourUrl);
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     background-attachment: fixed;
+//     background-position: center; 
+// }
