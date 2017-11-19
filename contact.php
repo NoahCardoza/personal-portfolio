@@ -1,5 +1,4 @@
 <?
-
 date_default_timezone_set('America/Los_Angeles');
 
 function ip()
@@ -19,21 +18,6 @@ function ip()
 	else
 		return'UNKNOWN';
 }
-
-if (isset($_POST['message']) || isset($_POST['email'])){
-	$endl = "\n";
-	$date = date('Y-H-i-s');
-	$contents =  $date . $endl;
-	$contents .= 'IP : ' . ip() . $endl;
-	$contents .= 'FROM : ' . (isset($_POST['email']) ? $_POST['email'] : 'UNKNOWN') . $endl; 
-	$contents .= "--- START MESSAGE ---" . $endl;
-	$contents .= (isset($_POST['message']) ? $_POST['message'] : 'NONE') . $endl;
-	if (!is_dir('messages')){
-		mkdir('messages', 0777);
-	}
-	file_put_contents('messages/' . $date . '.msg', $contents);
-}
-
 ?>
 
 <!DOCTYPE html>
