@@ -33,15 +33,14 @@ function ip()
 		<?include("navbar.html");?>
 		<section class="spacer-lg"><h1>
 			<?
-				if (isset($_POST['message']) || isset($_POST['email'])){
+				if (isset($_POST['message']) && isset($_POST['email'])){
 					$endl = "\n";
 					$date = date('Y-H-i-s');
 					$contents =  $date . $endl;
 					$contents .= 'IP : ' . ip() . $endl;
-					$contents .= 'FROM : ' . (isset($_POST['email']) ? $_POST['email'] : 'UNKNOWN') . $endl; 
+					$contents .= 'FROM : ' . ($_POST['email'] ? $_POST['email'] : 'UNKNOWN') . $endl; 
 					$contents .= "--- START MESSAGE ---" . $endl;
-					$contents .= (isset($_POST['message']) ? $_POST['message'] : 'NONE') . $endl;
-					$contents .= (isset($_POST['message']) ? $_POST['message'] : 'NONE') . $endl;
+					$contents .= ($_POST['message'] ? $_POST['message'] : 'NONE') . $endl;
 					if (!is_dir('./messages')){
 						mkdir('./messages', 0777);
 					}
