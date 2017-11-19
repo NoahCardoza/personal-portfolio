@@ -134,7 +134,6 @@ $nav-hight: 15px;
 		flex-grow: 1;
 		padding: $nav-hight 20px;
 		@include transition(background-color 500ms);
-		background-color: transparent;
 		&:hover, &:focus {
 			background-color: rgba(255,255,255,0.1)!important;
 			outline: none;
