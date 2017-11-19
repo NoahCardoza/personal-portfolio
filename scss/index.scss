@@ -1,5 +1,3 @@
-
-
 $background-color: #242424;
 $text-color: #fff;
 
@@ -9,6 +7,10 @@ $green: #009587;
 $blue: #00dcff;
 $grey: #333233;
 
+$transparent-lighten: rgba(255, 255, 255, 0.05);
+
+$border-radius: 3px;
+$border-width: 2px;
 
 $z-layers: (
 	modal				: 200,
@@ -49,12 +51,17 @@ $z-layers: (
 %gradient-header {
 	// #950090, #ff006a
 	// @include gradient(left, $green , $blue);
-	@include gradient(left, #950090, #ff006a);
+	// @include gradient(left, #950090, #ff006a);
+	// @include gradient(right, #09dbff, #ff006a);
+	@include gradient(right, $pink, $purple);
+
 }
 
 %gradient-invert {
-	@include gradient(left, $pink, $purple);
+	@include gradient(left, $pink, #ffc800);
 }
+
+%box-shadow { box-shadow: 0px 0px 5px 0px #000; }
 
 * {
 	font-family: Verdana;
@@ -63,9 +70,7 @@ $z-layers: (
 }
 
 body {
-	padding: {
-		top: 45px;
-	};
+	padding-top: 45px;
 	background-color: $background-color;
 	position: relative;
 	margin: 0;
@@ -84,15 +89,15 @@ body {
 a {
 	color: $pink;
 	text-decoration: none;
-	border-bottom: $pink 2px solid;
-	border-top-right-radius: 3px;
-	border-top-left-radius: 3px;
+	border-bottom: $pink $border-width solid;
+	border-top-right-radius: $border-radius;
+	border-top-left-radius: $border-radius;
 	@include transition(color 500ms, border 500ms);
 	&:hover, &:focus {
 		outline: none;
 		color: white;
 		border-bottom-color: $green;
-		background-color: #FFF1;
+		background-color: $transparent-lighten;
 	}
 }
 
@@ -103,16 +108,24 @@ h1, h2, h3, h4, h5, h6 {
 
 $nav-hight: 15px;
 
+[data-nav="localhost"] .navbar .link#localhost, [data-nav="about"] .navbar .link#about, [data-nav="contact"] .navbar .link#contact{
+	font-weight:bold;
+	flex-grow: 2;
+	font-weight: bold;
+	background-color: $transparent-lighten;
+}
+
 .navbar {
 	// @extend %gradient-header;
-	background-color: $green;
+	// background-color: $green;
+	background-color: $grey;
 	z-index: z-index('navigation');
 	position: fixed;
 	width: 100%;
 	top: 0;
 	left: 0;
 	text-align: center;
-	box-shadow: 0px 0px 5px 0px #000;
+	@extend %box-shadow;
 	display: flex;
 	& .link {
 		background-color: transparent;
@@ -124,17 +137,10 @@ $nav-hight: 15px;
 		@include transition(background-color 500ms);
 		background-color: transparent;
 		&:hover, &:focus {
-			background-color: rgba(255,255,255,0.4);
+			background-color: rgba(255,255,255,0.1)!important;
 			outline: none;
 		}
 	}
-}
-
-[data-nav="localhost"] .navbar .link#localhost, [data-nav="about"] .navbar .link#about, [data-nav="contact"] .navbar .link#contact{
-	font-weight:bold;
-	flex-grow: 2;
-	font-weight: bold;
-	background-color: rgba(255,255,255,0.4);
 }
 
 [class^="spacer-"] {
@@ -178,7 +184,7 @@ $nav-hight: 15px;
 	padding: 10px;
 	// background-color: $grey;
 	background-color: $green;
-	box-shadow: 0px 0px 5px 0px #000;
+	@extend %box-shadow;
 }
 
 .main {
@@ -190,31 +196,40 @@ $nav-hight: 15px;
 	height: 100%;
 	padding: 20px 30px;
 	article {
+		// @extend %box-shadow;
+
+		border-top-right-radius: $border-radius;
+		border-bottom-right-radius: $border-radius;
+		// box-shadow: 0px 0px 5px 0px #000;
+		box-shadow: inset 0px 0px 5px 0px #000;
 		max-width: 500px;
-		border-left: solid 3px $pink;
-		padding-left: 10px;
+		border-left: solid $border-width + 1 $pink;
+		padding: 15px;
 	}
 }
 
 %input {
+	// @extend %box-shadow;
 	width: 100%;
 	font-size: 16px;
 	background-color: transparent;
 	padding: 10px 15px;
 	margin-top: 10px;
-	background-color: #FFF1;
+	background-color: $transparent-lighten;
 	color: white;
+	box-shadow: 0px 0px 5px 0px #000;
 	&:focus{
+		box-shadow: inset 0px 0px 5px 0px #000;
 		outline: none;
-		border-color: white;
+		border-color: $green;
 	}
 }
 
 [type="password"],[type="email"],[type="text"], textarea {
 	border: none;
-	border-bottom: $pink 2px solid;
-	border-top-right-radius: 3px;
-	border-top-left-radius: 3px;
+	border-bottom: $pink $border-width solid;
+	border-top-right-radius: $border-radius;
+	border-top-left-radius: $border-radius;
 	@extend %input;
 }
 
@@ -226,7 +241,8 @@ textarea {
 
 [type="submit"]{
 	@extend %input;
-	border: $pink 2px solid;
+	border-radius: $border-radius;
+	border: $pink $border-width solid;
 }
 
 
