@@ -62,6 +62,7 @@ $z-layers: (
 }
 
 %box-shadow { box-shadow: 0px 0px 5px 0px #000; }
+%box-shadow-inset { box-shadow: inset 0px 0px 5px 0px #000; }
 
 * {
 	font-family: Verdana, Arial, sans-serif;
@@ -188,16 +189,22 @@ $nav-hight: 15px;
 .main {
 	display: flex;
 	align-items: center;
+	flex-wrap: wrap;
+	flex-direction: column;
+
 	justify-content: center;
-	// margin-top: 50%;
-    // transform: translateY(-50%);
 	height: 100%;
 	padding: 20px 30px;
-	article {
+	& article {
+		&:not(:last-child){
+			margin-bottom: 30px;
+		}
+		flex-basis: calc(50% + 20px);
 		border-top-right-radius: $border-radius;
 		border-bottom-right-radius: $border-radius;
-		box-shadow: inset 0px 0px 5px 0px #000;
+		@extend %box-shadow-inset;
 		max-width: 500px;
+		min-width: 200px;
 		border-left: solid $border-width + 1 $pink;
 		padding: 15px;
 		& .title {
@@ -208,16 +215,15 @@ $nav-hight: 15px;
 }
 
 %input {
-	// @extend %box-shadow;
+	@extend %box-shadow;
 	width: 100%;
 	font-size: 16px;
 	padding: 10px 15px;
 	margin-top: 10px;
 	background-color: $transparent-lighten;
 	color: white;
-	box-shadow: 0px 0px 5px 0px #000;
 	&:focus{
-		box-shadow: inset 0px 0px 5px 0px #000;
+		@extend %box-shadow-inset;
 		outline: none;
 		border-color: $green;
 	}
