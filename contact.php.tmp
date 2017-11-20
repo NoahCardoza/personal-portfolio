@@ -24,11 +24,11 @@
 <html lang="en" data-nav="contact">
 <head>
 	<title>Contact - Noah Cardoza</title>
-	<?include("includes/includes/head.html");?>
+	<?include("includes/head.html");?>
 </head>
 <body>
 	<div class="wrapper">
-		<?include("includes/includes/navbar.html");?>
+		<?include("includes/navbar.html");?>
 		<div class="spacer-lg"><h1>
 			<?
 				if (isset($_POST['message']) && isset($_POST['email'])){
@@ -65,6 +65,6 @@
 		</div>
 		<div class="push"></div>
 	</div>
-	<?include("includes/includes/footer.html");?>
+	<?include("includes/footer.html");?>
 </body>
 </html>
