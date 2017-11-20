@@ -2,11 +2,11 @@
 <html lang="en" data-nav="localhost">
 <head>
 	<title>Localhost - Noah Cardoza</title>
-	<?include("includes/includes/head.html");?>
+	<?include("includes/head.html");?>
 </head>
 <body>
 	<div class="wrapper">
-		<?include("includes/includes/navbar.html");?>
+		<?include("includes/navbar.html");?>
 		<div class="spacer-lg"><h1>Welcome To My  127.0.0.1</h1></div>
 		<div class="divider"><span>I'm glad you're here! Poke around and have some fun!</span></div>
 		<div class="main">
@@ -22,6 +22,6 @@
 		</div>
 		<div class="push"></div>
 	</div>
-	<?include("includes/includes/footer.html");?>
+	<?include("includes/footer.html");?>
 </body>
 </html>

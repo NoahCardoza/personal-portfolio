@@ -2,7 +2,7 @@
 <html lang="en" data-nav="about">
 <head>
 	<title>About - Noah Cardoza</title>
-	<?include("includes/includes/head.html");?>
+	<?include("includes/head.html");?>
 </head>
 <body>
 	<div class="wrapper">
@@ -23,6 +23,6 @@
 		</div>
 		<div class="push"></div>
 	</div>
-	<?include("includes/includes/footer.html");?>
+	<?include("includes/footer.html");?>
 </body>
 </html>
