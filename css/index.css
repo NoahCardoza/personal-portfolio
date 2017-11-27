@@ -165,9 +165,6 @@ h1, h2, h3, h4, h5, h6 {
     border-color: #009587; }
 
 [type="password"], [type="email"], [type="text"], textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
   border: none;
   border-bottom: #fd5382 2px solid;
   border-top-right-radius: 3px;

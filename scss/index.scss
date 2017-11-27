@@ -241,9 +241,9 @@ $nav-hight: 15px;
 }
 
 [type="password"],[type="email"],[type="text"], textarea {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
+//	-webkit-appearance: none;
+//	-moz-appearance: none;
+//	appearance: none;
 	border: none;
 	border-bottom: $pink $border-width solid;
 	border-top-right-radius: $border-radius;
