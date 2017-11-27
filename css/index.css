@@ -1,3 +1,4 @@
+@charset "UTF-8";
 [class^="spacer-"] {
   background-color: #fd5382;
   background: -webkit-linear-gradient(right, #fd5382, #6d0095);
@@ -56,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   margin: 0; }
 
-[data-nav="localhost"] .navbar .link#localhost, [data-nav="about"] .navbar .link#about, [data-nav="contact"] .navbar .link#contact {
+[data-nav="localhost"] .navbar .link#localhost, [data-nav="links"] .navbar .link#links, [data-nav="about"] .navbar .link#about, [data-nav="contact"] .navbar .link#contact {
   flex-grow: 2;
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.05); }
@@ -133,12 +134,17 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: center;
   height: 100%;
   padding: 20px 30px; }
+  .main > * {
+    max-width: 500px;
+    min-width: 200px; }
+  .main > .instagram-media-registered, .main > .instagram-media {
+    max-width: 800px !important;
+    min-width: 200px !important; }
   .main article {
+    width: 100%;
     flex-basis: calc(50% + 20px);
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
-    max-width: 500px;
-    min-width: 200px;
     border-left: solid 3px #fd5382;
     padding: 15px; }
     .main article:not(:last-child) {
@@ -192,5 +198,25 @@ textarea {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center; }
+
+blockquote:before {
+  content: '\201C'; }
+
+blockquote:after {
+  content: '\201D'; }
+
+.qt-lg blockquote {
+  margin: 0;
+  font-size: 2em; }
+  .qt-lg blockquote:before {
+    content: '\201C'; }
+  .qt-lg blockquote:after {
+    content: '\201D'; }
+.qt-lg cite {
+  margin-top: 0.1em;
+  margin-left: 2em;
+  float: left; }
+  .qt-lg cite:before {
+    content: '— '; }
 
 /*# sourceMappingURL=index.css.map */

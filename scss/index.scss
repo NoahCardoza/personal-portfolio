@@ -111,7 +111,7 @@ h1, h2, h3, h4, h5, h6 {
 
 $nav-hight: 15px;
 
-[data-nav="localhost"] .navbar .link#localhost, [data-nav="about"] .navbar .link#about, [data-nav="contact"] .navbar .link#contact{
+[data-nav="localhost"] .navbar .link#localhost, [data-nav="links"] .navbar .link#links, [data-nav="about"] .navbar .link#about, [data-nav="contact"] .navbar .link#contact{
 	flex-grow: 2;
 	font-weight: bold;
 	background-color: $transparent-lighten;
@@ -165,7 +165,7 @@ $nav-hight: 15px;
 		@extend %gradient-invert;
 	}
 	&:hover {
-		&:before {opacity: 1;}
+		&:before { opacity: 1; }
 	}
 }
 
@@ -197,7 +197,18 @@ $nav-hight: 15px;
 	justify-content: center;
 	height: 100%;
 	padding: 20px 30px;
+	> * {
+		max-width: 500px;
+		min-width: 200px;
+	}
+
+	& > .instagram-media-registered, > .instagram-media {
+		// width: 100%!important;
+		max-width: 800px!important;
+		min-width: 200px!important;
+	}
 	& article {
+    width: 100%;
 		&:not(:last-child){
 			margin-bottom: 30px;
 		}
@@ -205,8 +216,6 @@ $nav-hight: 15px;
 		border-top-right-radius: $border-radius;
 		border-bottom-right-radius: $border-radius;
 		@extend %box-shadow-inset;
-		max-width: 500px;
-		min-width: 200px;
 		border-left: solid $border-width + 1 $pink;
 		padding: 15px;
 		& .title {
@@ -280,6 +289,94 @@ textarea {
 	// object-fit: scale-down;
  //    float: right;
 }
+
+// .qt-lg
+
+blockquote:before {
+	content:'\201C';
+}
+
+blockquote:after {
+	content:'\201D';
+}
+
+.qt-lg {
+	blockquote {
+		margin: 0;
+		font-size: 2em;
+		&:before { content:'\201C'; }
+		&:after { content:'\201D'; }
+	}
+	cite {
+		margin-top: 0.1em;
+		margin-left: 2em;
+		float: left;
+		&:before {
+			content: '— ';
+		}
+	}
+}
+// blockquote {
+// 	&:before {
+// 		content: open-quote;
+// 	    font-size: 64px;
+// 	    position: absolute;
+// 	    transform: translate(-40px, -30px);
+// 	}
+
+// 	&:after {
+// 		content: close-quote;
+// 	    font-size: 64px;
+// 	    position: absolute;
+// 	    transform: translate(-40px, -30px);
+// 	}
+
+// 	& *:first-child {
+// 	  display: inline-block;
+// 	}
+
+// 	& > sub {
+// 		margin-top: 5px;
+// 		float: left;
+// 		&:before {
+// 			content: '— ';
+// 		}
+// 	}
+// }
+// blockquote {
+//   background: #f9f9f9;
+//   border-left: 10px solid #ccc;
+//   margin: 1.5em 10px;
+//   padding: 0.5em 10px;
+//   quotes: "\201C""\201D""\2018""\2019";
+// }
+// blockquote
+
+
+
+// blockquote {
+// 	quotes: "\201C""\201D""\2018""\2019";
+// 	&:before {
+// 		content: open-quote;
+// 		font-size: 4em;
+// 		line-height: 0.1em;
+// 		margin-right: 0.25em;
+// 		vertical-align: -0.4em;
+// 	}
+// 	q {
+// 		quotes: none;
+// 		display: inline;
+// 	}
+
+	// & > sub {
+	// 	margin-top: 5px;
+	// 	float: left;
+	// 	&:before {
+	// 		content: '— ';
+	// 	}
+	// }
+// }
+
 
 // .img-responsive {
 //     background: url(yourUrl);

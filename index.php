@@ -17,7 +17,7 @@
 				</div>
 				<p>This website was the product of hard work and a passion for design.</p>
 				<p>Well, while this is true, it was mostly just fun.</p>
-				<p>I love making things, and making them right. I enjoy designing sleak content, just like this site, but I also have fun getting down and dirty with C. I used to use Python for everything but have since discovered the power of Bash.</p>
+				<p>I love making things, and making them right. I enjoy designing sleek content, just like this site, but I also have fun getting down and dirty with C. I used to use Python for everything but have since discovered the power of Bash.</p>
 			</article>
 		</div>
 		<div class="push"></div>
