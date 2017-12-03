@@ -27,7 +27,7 @@
         <article>
           <div class='title'>
             <h2>Skills</h2>
-            <sub>Sub titles</sub>
+            <sub>Subtitles</sub>
           </div>
           <ul>
             <li>HTML/CSS</li>
