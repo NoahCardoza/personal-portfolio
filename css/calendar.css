@@ -1,6 +1,4 @@
-   * {
-      box-sizing: border-box;
-    }
+   * {box-sizing: border-box;}
     html {
       background-color:#5b8;
       font-size: 1.5em;
@@ -8,9 +6,7 @@
       text-align: center;
       font-family: Bookman, sans-serif;}
     @media screen and (min-width: 736px) {
-      html {
-        font-size: 3em;}}
-
+      html {font-size: 3em;}}
     body{
       height: 100%;
       display: flex;
@@ -59,5 +55,4 @@
     tbody div:hover{
       background-color: #ddd;
       border: solid #5b8 5px;}
-    thead td{
-      background-color: #ddd;}
+    thead td{background-color: #ddd;}
