@@ -1,4 +1,37 @@
 @charset "UTF-8";
+/*
+
+SASS VARIABLES
+
+$background-color: #242424;
+$text-color: #fff;
+
+$pink: #fd5382;
+$pink-lighter: #fab9d7;
+
+$purple: #6d0095;
+$green: #009587;
+$blue: #00dcff;
+$grey: #333233;
+
+$transparent-lighten: rgba(255, 255, 255, 0.05);
+
+$border-radius: 3px;
+$border-width: 2px;
+
+$nav-hight: 15px;
+
+$z-layers: (
+	modal  			        : 200,
+	navigation          : 100,
+	divider				      : 90,
+	footer				      : 80,
+	triangle			      : 60,
+	navigation-rainbow	: 50,
+);
+
+*/
+/* GRADIENTS */
 [class^="spacer-"] {
   background-color: #fd5382;
   background: -webkit-linear-gradient(right, #fd5382, #6d0095);
@@ -13,12 +46,14 @@
   background: -moz-linear-gradient(right, #fab9d7, #fd5382);
   background: linear-gradient(to right, #fab9d7, #fd5382); }
 
+/* BOX SHADOW */
 .navbar, .divider, [type="password"], [type="email"], [type="text"], textarea, [type="submit"] {
   box-shadow: 0px 0px 5px 0px #000; }
 
 .main article, [type="password"]:focus, [type="email"]:focus, [type="text"]:focus, textarea:focus, [type="submit"]:focus {
   box-shadow: inset 0px 0px 5px 0px #000; }
 
+/* DEFAULTS */
 * {
   font-family: Verdana, Arial, sans-serif;
   color: #fff;
@@ -30,6 +65,7 @@ body {
   position: relative;
   margin: 0; }
 
+/* STICK FOOTER */
 .wrapper {
   min-height: calc(100vh - 45px);
   margin-bottom: -70px; }
@@ -37,6 +73,7 @@ body {
 .footer, .push {
   height: 70px; }
 
+/* LINKS */
 a {
   color: #fd5382;
   text-decoration: none;
@@ -53,15 +90,18 @@ a {
     border-bottom-color: #009587;
     background-color: rgba(255, 255, 255, 0.05); }
 
+/* HEADINGS */
 h1, h2, h3, h4, h5, h6 {
   display: block;
   margin: 0; }
 
+/* HEADER */
 [data-nav="localhost"] .navbar .link#localhost, [data-nav="links"] .navbar .link#links, [data-nav="about"] .navbar .link#about, [data-nav="contact"] .navbar .link#contact {
   flex-grow: 2;
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.05); }
 
+/* NAVBAR */
 .navbar {
   background-color: #333233;
   z-index: 100;
@@ -70,7 +110,8 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   text-align: center;
-  display: flex; }
+  display: flex;
+  /* LINK ITEMS */ }
   .navbar .link {
     background-color: transparent;
     border: none;
@@ -86,6 +127,7 @@ h1, h2, h3, h4, h5, h6 {
       background-color: rgba(255, 255, 255, 0.1) !important;
       outline: none; }
 
+/* SPACER */
 [class^="spacer-"] {
   text-align: center;
   display: flex;
@@ -116,6 +158,7 @@ h1, h2, h3, h4, h5, h6 {
 .spacer-lg {
   height: 200px; }
 
+/* DIVIDER */
 .divider {
   position: relative;
   text-align: center;
@@ -126,6 +169,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px;
   background-color: #009587; }
 
+/* MAIN CONTENT */
 .main {
   display: flex;
   align-items: center;
@@ -138,9 +182,11 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 500px;
     min-width: 200px; }
   .main > .instagram-media-registered, .main > .instagram-media {
+    /* PHOTOGRAPHY => INSTAGRAM */
     max-width: 800px !important;
     min-width: 200px !important; }
   .main article {
+    /* CONTENT BLOCKS */
     width: 100%;
     flex-basis: calc(50% + 20px);
     border-top-right-radius: 3px;
@@ -153,6 +199,7 @@ h1, h2, h3, h4, h5, h6 {
       padding-bottom: 15px;
       border-bottom: #009587 2px solid; }
 
+/* INPUT */
 [type="password"], [type="email"], [type="text"], textarea, [type="submit"] {
   width: 100%;
   font-size: 16px;
@@ -179,14 +226,14 @@ textarea {
   border-radius: 3px;
   border: #fd5382 2px solid; }
 
-#contact-form {
+#contact-form, #contact-form [type="submit"] {
   width: 100%; }
-  #contact-form [type="submit"] {
-    width: 100%; }
 
+/* POSITIONING */
 .float-right {
   float: right; }
 
+/* LOGO */
 .logo-sm {
   height: 50px;
   width: 50px;
@@ -196,19 +243,14 @@ textarea {
   background-repeat: no-repeat;
   background-position: center; }
 
-blockquote:before {
-  content: '\201C'; }
-
-blockquote:after {
-  content: '\201D'; }
-
+/* QUOTE BLOCKS */
 .qt-lg blockquote {
   margin: 0;
   font-size: 2em; }
   .qt-lg blockquote:before {
-    content: '\201C'; }
+    content: open-quote; }
   .qt-lg blockquote:after {
-    content: '\201D'; }
+    content: close-quote; }
 .qt-lg cite {
   margin-top: 0.1em;
   margin-left: 2em;

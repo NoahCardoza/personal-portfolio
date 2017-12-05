@@ -1,3 +1,7 @@
+/*
+
+SASS VARIABLES
+
 $background-color: #242424;
 $text-color: #fff;
 
@@ -14,12 +18,43 @@ $transparent-lighten: rgba(255, 255, 255, 0.05);
 $border-radius: 3px;
 $border-width: 2px;
 
+$nav-hight: 15px;
+
 $z-layers: (
-	modal				: 200,
-	navigation			: 100,
-	divider				: 90,
-	footer				: 80,
-	triangle			: 60,
+	modal  			        : 200,
+	navigation          : 100,
+	divider				      : 90,
+	footer				      : 80,
+	triangle			      : 60,
+	navigation-rainbow	: 50,
+);
+
+*/
+
+$background-color: #242424;
+$text-color: #fff;
+
+$pink: #fd5382;
+$pink-lighter: #fab9d7;
+
+$purple: #6d0095;
+$green: #009587;
+$blue: #00dcff;
+$grey: #333233;
+
+$transparent-lighten: rgba(255, 255, 255, 0.05);
+
+$border-radius: 3px;
+$border-width: 2px;
+
+$nav-hight: 15px;
+
+$z-layers: (
+	modal  			        : 200,
+	navigation          : 100,
+	divider				      : 90,
+	footer				      : 80,
+	triangle			      : 60,
 	navigation-rainbow	: 50,
 );
 
@@ -50,21 +85,22 @@ $z-layers: (
     transition:         $transition;
 }
 
-%gradient-header {
-	// #950090, #ff006a
-	// @include gradient(left, $green , $blue);
-	// @include gradient(left, #950090, #ff006a);
-	// @include gradient(right, #09dbff, #ff006a);
-	@include gradient(right, $pink, $purple);
+/* GRADIENTS */
 
+%gradient-header {
+	@include gradient(right, $pink, $purple);
 }
 
 %gradient-invert {
 	@include gradient(right, $pink-lighter, $pink);
 }
 
+/* BOX SHADOW */
+
 %box-shadow { box-shadow: 0px 0px 5px 0px #000; }
 %box-shadow-inset { box-shadow: inset 0px 0px 5px 0px #000; }
+
+/* DEFAULTS */
 
 * {
 	font-family: Verdana, Arial, sans-serif;
@@ -80,6 +116,8 @@ body {
 
 }
 
+/* STICK FOOTER */
+
 .wrapper {
   min-height: calc(100vh - 45px);
   margin-bottom: -70px;
@@ -88,6 +126,8 @@ body {
 .footer, .push {
   height: 70px;
 }
+
+/* LINKS */
 
 a {
 	color: $pink;
@@ -104,12 +144,14 @@ a {
 	}
 }
 
+/* HEADINGS */
+
 h1, h2, h3, h4, h5, h6 {
 	display: block;
 	margin: 0;
 }
 
-$nav-hight: 15px;
+/* HEADER */
 
 [data-nav="localhost"] .navbar .link#localhost, [data-nav="links"] .navbar .link#links, [data-nav="about"] .navbar .link#about, [data-nav="contact"] .navbar .link#contact{
 	flex-grow: 2;
@@ -117,9 +159,9 @@ $nav-hight: 15px;
 	background-color: $transparent-lighten;
 }
 
+/* NAVBAR */
+
 .navbar {
-	// @extend %gradient-header;
-	// background-color: $green;
 	background-color: $grey;
 	z-index: z-index('navigation');
 	position: fixed;
@@ -129,6 +171,9 @@ $nav-hight: 15px;
 	text-align: center;
 	@extend %box-shadow;
 	display: flex;
+  
+  /* LINK ITEMS */
+  
 	& .link {
 		background-color: transparent;
 		border: none;
@@ -143,6 +188,8 @@ $nav-hight: 15px;
 		}
 	}
 }
+
+/* SPACER */
 
 [class^="spacer-"] {
 	text-align: center;
@@ -175,18 +222,21 @@ $nav-hight: 15px;
 	&-lg {height: 200px;}
 }
 
+/* DIVIDER */
+
 .divider {
 	position: relative;
 	text-align: center;
 	z-index: z-index('divider');
 	display: flex;
-    align-items: center;
-    justify-content: center;
+  align-items: center;
+  justify-content: center;
 	padding: 10px;
-	// background-color: $grey;
 	background-color: $green;
 	@extend %box-shadow;
 }
+
+/* MAIN CONTENT */
 
 .main {
 	display: flex;
@@ -201,13 +251,14 @@ $nav-hight: 15px;
 		max-width: 500px;
 		min-width: 200px;
 	}
-
+  
 	& > .instagram-media-registered, > .instagram-media {
-		// width: 100%!important;
+    /* PHOTOGRAPHY => INSTAGRAM */
 		max-width: 800px!important;
 		min-width: 200px!important;
 	}
-	& article {
+ 
+	& article {  /* CONTENT BLOCKS */
     width: 100%;
 		&:not(:last-child){
 			margin-bottom: 30px;
@@ -225,6 +276,8 @@ $nav-hight: 15px;
 	}
 }
 
+/* INPUT */
+
 %input {
 	@extend %box-shadow;
 	width: 100%;
@@ -241,9 +294,6 @@ $nav-hight: 15px;
 }
 
 [type="password"],[type="email"],[type="text"], textarea {
-//	-webkit-appearance: none;
-//	-moz-appearance: none;
-//	appearance: none;
 	border: none;
 	border-bottom: $pink $border-width solid;
 	border-top-right-radius: $border-radius;
@@ -263,49 +313,36 @@ textarea {
 	border: $pink $border-width solid;
 }
 
-#contact-form {
+#contact-form, #contact-form [type="submit"] {
 	width: 100%;
-	& [type="submit"] {
-		width: 100%;
-	}
 }
+
+/* POSITIONING */
 
 .float-right {
 	float: right;
 }
 
+/* LOGO */
+
 .logo-sm {
-	// padding: 25px;
 	height: 50px;
 	width: 50px;
 	vertical-align: middle;
 	background: url("../icon-big.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    // background-attachment: fixed;
-    background-position: center; 
-	// max-width:100%;
-	// max-height:100%;
-	// object-fit: scale-down;
- //    float: right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; 
 }
 
-// .qt-lg
-
-blockquote:before {
-	content:'\201C';
-}
-
-blockquote:after {
-	content:'\201D';
-}
+/* QUOTE BLOCKS */
 
 .qt-lg {
 	blockquote {
 		margin: 0;
 		font-size: 2em;
-		&:before { content:'\201C'; }
-		&:after { content:'\201D'; }
+		&:before { content: open-quote; }
+		&:after { content: close-quote; }
 	}
 	cite {
 		margin-top: 0.1em;
@@ -316,72 +353,3 @@ blockquote:after {
 		}
 	}
 }
-// blockquote {
-// 	&:before {
-// 		content: open-quote;
-// 	    font-size: 64px;
-// 	    position: absolute;
-// 	    transform: translate(-40px, -30px);
-// 	}
-
-// 	&:after {
-// 		content: close-quote;
-// 	    font-size: 64px;
-// 	    position: absolute;
-// 	    transform: translate(-40px, -30px);
-// 	}
-
-// 	& *:first-child {
-// 	  display: inline-block;
-// 	}
-
-// 	& > sub {
-// 		margin-top: 5px;
-// 		float: left;
-// 		&:before {
-// 			content: '— ';
-// 		}
-// 	}
-// }
-// blockquote {
-//   background: #f9f9f9;
-//   border-left: 10px solid #ccc;
-//   margin: 1.5em 10px;
-//   padding: 0.5em 10px;
-//   quotes: "\201C""\201D""\2018""\2019";
-// }
-// blockquote
-
-
-
-// blockquote {
-// 	quotes: "\201C""\201D""\2018""\2019";
-// 	&:before {
-// 		content: open-quote;
-// 		font-size: 4em;
-// 		line-height: 0.1em;
-// 		margin-right: 0.25em;
-// 		vertical-align: -0.4em;
-// 	}
-// 	q {
-// 		quotes: none;
-// 		display: inline;
-// 	}
-
-	// & > sub {
-	// 	margin-top: 5px;
-	// 	float: left;
-	// 	&:before {
-	// 		content: '— ';
-	// 	}
-	// }
-// }
-
-
-// .img-responsive {
-//     background: url(yourUrl);
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     background-attachment: fixed;
-//     background-position: center; 
-// }
