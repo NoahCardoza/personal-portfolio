@@ -57,7 +57,8 @@ $z-layers: (
 * {
   font-family: Verdana, Arial, sans-serif;
   color: #fff;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; }
 
 body {
   padding-top: 45px;
@@ -97,9 +98,18 @@ h1, h2, h3, h4, h5, h6 {
 
 /* HEADER */
 [data-nav="localhost"] .navbar .link#localhost, [data-nav="links"] .navbar .link#links, [data-nav="about"] .navbar .link#about, [data-nav="contact"] .navbar .link#contact {
-  flex-grow: 2;
-  font-weight: bold;
-  background-color: rgba(255, 255, 255, 0.05); }
+  font-weight: bold; }
+  @media (max-width: 455px) {
+    [data-nav="localhost"] .navbar .link#localhost, [data-nav="links"] .navbar .link#links, [data-nav="about"] .navbar .link#about, [data-nav="contact"] .navbar .link#contact {
+      pointer-events: none;
+      cursor: default;
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      top: 0; } }
+  @media (min-width: 456px) {
+    [data-nav="localhost"] .navbar .link#localhost, [data-nav="links"] .navbar .link#links, [data-nav="about"] .navbar .link#about, [data-nav="contact"] .navbar .link#contact {
+      background-color: rgba(255, 255, 255, 0.05); } }
 
 /* NAVBAR */
 .navbar {
@@ -112,7 +122,45 @@ h1, h2, h3, h4, h5, h6 {
   text-align: center;
   display: flex;
   /* LINK ITEMS */ }
+  .navbar input {
+    display: none;
+    width: 46px;
+    height: 42px;
+    /* place it over the hamburger */
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+    opacity: 0;
+    /* hide this */ }
+  .navbar span {
+    display: none;
+    width: 33px;
+    height: 4px;
+    border-radius: 3px;
+    background: #FFF;
+    border-radius: 3px;
+    margin: 9px; }
+  @media (max-width: 455px) {
+    .navbar {
+      display: block; }
+      .navbar span {
+        display: block; }
+      .navbar div {
+        display: block; }
+      .navbar input {
+        display: block; }
+      .navbar input:checked {
+        width: 100vh;
+        height: 100vh; }
+        .navbar input:checked ~ a {
+          position: relative;
+          z-index: 150;
+          display: block; }
+      .navbar .link {
+        display: none; } }
   .navbar .link {
+    width: 100%;
     background-color: transparent;
     border: none;
     border-radius: 0;
@@ -179,6 +227,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   padding: 20px 30px; }
   .main > * {
+    /* CINSTARIN */
     max-width: 500px;
     min-width: 200px; }
   .main > .instagram-media-registered, .main > .instagram-media {
@@ -186,8 +235,9 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 800px !important;
     min-width: 200px !important; }
   .main article {
-    /* CONTENT BLOCKS */
+    /* CONTENT BLOCK */
     width: 100%;
+    /* FIT ONLY ONE BLOCK PER ROW */
     flex-basis: calc(50% + 20px);
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
@@ -226,6 +276,7 @@ textarea {
   border-radius: 3px;
   border: #fd5382 2px solid; }
 
+/* FORM */
 #contact-form, #contact-form [type="submit"] {
   width: 100%; }
 

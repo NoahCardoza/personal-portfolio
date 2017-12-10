@@ -31,26 +31,28 @@ $z-layers: (
 
 */
 
-$background-color: #242424;
-$text-color: #fff;
+@import "include-media";
 
-$pink: #fd5382;
-$pink-lighter: #fab9d7;
+$background-color	: #242424;
+$text-color				: #fff;
 
-$purple: #6d0095;
-$green: #009587;
-$blue: #00dcff;
-$grey: #333233;
+$pink					: #fd5382;
+$pink-lighter	: #fab9d7;
+
+$purple	: #6d0095;
+$green	: #009587;
+$blue		: #00dcff;
+$grey		: #333233;
 
 $transparent-lighten: rgba(255, 255, 255, 0.05);
 
-$border-radius: 3px;
-$border-width: 2px;
-
-$nav-hight: 15px;
+$border-radius	: 3px;
+$border-width		: 2px;
+$nav-hight			: 15px;
 
 $z-layers: (
 	modal  			        : 200,
+	nav-link 		        : 150,
 	navigation          : 100,
 	divider				      : 90,
 	footer				      : 80,
@@ -65,10 +67,10 @@ $z-layers: (
 
 @mixin gradient($direction, $start, $end){
 	background-color: $start;
-  	background: -webkit-linear-gradient($direction, $start , $end);
-  	background: -o-linear-gradient($direction, $start, $end); 
+	background: -webkit-linear-gradient($direction, $start , $end);
+	background: -o-linear-gradient($direction, $start, $end);
 	background: -moz-linear-gradient($direction, $start, $end);
-  	background: linear-gradient(to $direction, $start, $end);
+	background: linear-gradient(to $direction, $start, $end);
 }
 
 @mixin animate($argv){
@@ -79,10 +81,10 @@ $z-layers: (
 }
 
 @mixin transition($transition...) {
-    -moz-transition:    $transition;
-    -o-transition:      $transition;
-    -webkit-transition: $transition;
-    transition:         $transition;
+  -moz-transition:    $transition;
+  -o-transition:      $transition;
+  -webkit-transition: $transition;
+  transition:         $transition;
 }
 
 /* GRADIENTS */
@@ -106,6 +108,7 @@ $z-layers: (
 	font-family: Verdana, Arial, sans-serif;
 	color: $text-color;
 	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
 }
 
 body {
@@ -154,9 +157,18 @@ h1, h2, h3, h4, h5, h6 {
 /* HEADER */
 
 [data-nav="localhost"] .navbar .link#localhost, [data-nav="links"] .navbar .link#links, [data-nav="about"] .navbar .link#about, [data-nav="contact"] .navbar .link#contact{
-	flex-grow: 2;
 	font-weight: bold;
-	background-color: $transparent-lighten;
+	@include media('<=455px'){
+		pointer-events: none;
+		cursor: default;
+		display: inline-block;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	@include media('>455px'){
+		background-color: $transparent-lighten;
+	}
 }
 
 /* NAVBAR */
@@ -169,12 +181,68 @@ h1, h2, h3, h4, h5, h6 {
 	top: 0;
 	left: 0;
 	text-align: center;
+
+	input {
+		display: none;
+		width: 46px;
+		height: 42px;
+		/* place it over the hamburger */
+	  position: absolute;
+	  top: 0px;
+	  left: 0px;
+	  cursor: pointer;
+	  opacity: 0; /* hide this */
+	}
+  //
+	// div {
+	// 	cursor: pointer;
+	// }
+
+	span {
+		display: none;
+		width: 33px;
+		height: 4px;
+		border-radius: 3px;
+		background: #FFF;
+		border-radius: 3px;
+		margin: 9px;
+	}
+
 	@extend %box-shadow;
 	display: flex;
-  
+  @include media('<=455px'){
+		display: block;
+		span {
+			display: block;
+		}
+
+		div {
+			display: block;
+		}
+
+		input {
+			display: block;
+		}
+
+		input:checked {
+			width: 100vh;
+			height: 100vh;
+			&	~ a {
+				  position: relative;
+					z-index: z-index('nav-link');
+					display: block;
+			}
+		}
+
+		& .link {
+			display: none;
+		}
+	}
   /* LINK ITEMS */
-  
+
 	& .link {
+		width: 100%;
+		// letter-spacing: 1px;
 		background-color: transparent;
 		border: none;
 		border-radius: 0;
@@ -247,22 +315,25 @@ h1, h2, h3, h4, h5, h6 {
 	justify-content: center;
 	height: 100%;
 	padding: 20px 30px;
-	> * {
+
+
+	> * { /* CINSTARIN */
 		max-width: 500px;
 		min-width: 200px;
 	}
-  
+
 	& > .instagram-media-registered, > .instagram-media {
     /* PHOTOGRAPHY => INSTAGRAM */
 		max-width: 800px!important;
 		min-width: 200px!important;
 	}
- 
-	& article {  /* CONTENT BLOCKS */
+
+	& article {  /* CONTENT BLOCK */
     width: 100%;
 		&:not(:last-child){
 			margin-bottom: 30px;
 		}
+		/* FIT ONLY ONE BLOCK PER ROW */
 		flex-basis: calc(50% + 20px);
 		border-top-right-radius: $border-radius;
 		border-bottom-right-radius: $border-radius;
@@ -313,6 +384,8 @@ textarea {
 	border: $pink $border-width solid;
 }
 
+/* FORM */
+
 #contact-form, #contact-form [type="submit"] {
 	width: 100%;
 }
@@ -332,7 +405,7 @@ textarea {
 	background: url("../icon-big.png");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; 
+  background-position: center;
 }
 
 /* QUOTE BLOCKS */
