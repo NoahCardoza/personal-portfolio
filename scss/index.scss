@@ -105,7 +105,9 @@ $z-layers: (
 %box-shadow { box-shadow: 0px 0px 5px 0px #000; }
 %box-shadow-inset { box-shadow: inset 0px 0px 5px 0px #000; }
 
-/* GLOBAL DEFAULTS */
+/*===============================*\
+|* GLOBAL DEFAULTS
+\*===============================*/
 
 * {
 	font-family: Verdana, Arial, sans-serif;
@@ -122,7 +124,9 @@ body {
 
 }
 
-/* STICK FOOTER */
+/*===============================*\
+|* STICKY FOOTER
+\*===============================*/
 
 .wrapper {
   min-height: calc(100vh - 45px);
@@ -133,7 +137,9 @@ body {
   height: 70px;
 }
 
-/* DEFAULT LINK STYLEING */
+/*===============================*\
+|* DEFAULT LINK STYLING
+\*===============================*/
 
 a {
 	color: $pink;
@@ -160,12 +166,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*===============================*\
-|* ACTIVE HEADER STYLEING
+|* ACTIVE HEADER STYLING
 \*===============================*/
 
 [data-nav="localhost"] .navbar a#localhost, [data-nav="photography"] .navbar a#photography, [data-nav="about"] .navbar a#about, [data-nav="contact"] .navbar a#contact{
 	font-weight: bold;
-	@include media('<=455px'){ /* STYLEING FOR SMALL SCREENS */
+	@include media('<=455px'){ /* STYLING FOR SMALL SCREENS */
 		pointer-events: none;
 		cursor: default;
 		display: block;
@@ -174,7 +180,7 @@ h1, h2, h3, h4, h5, h6 {
 		top: 0;
 	}
 	@include media('>455px'){
-		/* STYLEING FOR BIG SCREENS */
+		/* STYLING FOR BIG SCREENS */
 		background-color: $transparent-lighten;
 	}
 }
@@ -228,7 +234,7 @@ h1, h2, h3, h4, h5, h6 {
 		input:checked {
 			/**
 			 * MAKE CHECKBOX SPAN THE FULL
-			 * HEIGHT AND WIDTH OF THE SCREE
+			 * HEIGHT AND WIDTH OF THE SCREEN
 			 * SO WHEN CLICKING ANYWHERE the
 			 * CHECKBOX IS UNCHECKED AND THE
 			 * DROPDOWN IS CLOSED.
@@ -267,7 +273,7 @@ h1, h2, h3, h4, h5, h6 {
   /* LINK ITEMS */
 
 	& a {
-		/* DEFAULT NAV LINK STYLEING */
+		/* DEFAULT NAV LINK STYLING */
 		width: 100%;
 		background-color: transparent;
 		border: none;
@@ -284,7 +290,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*===============================*\
-|* SPACER STYLEING
+|* SPACER STYLING
 \*===============================*/
 
 [class*="spacer-"] {
@@ -319,7 +325,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*===============================*\
-|* DIVIDER STYLEING
+|* DIVIDER STYLING
 \*===============================*/
 
 .divider {
@@ -381,7 +387,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*===============================*\
-|* INPUT STYLEING
+|* INPUT STYLING
 \*===============================*/
 
 %input {
@@ -420,7 +426,7 @@ textarea {
 }
 
 /*===============================*\
-|* LOGO STYLEING
+|* LOGO STYLING
 \*===============================*/
 
 [class*="logo-"] {
@@ -441,7 +447,7 @@ textarea {
 }
 
 /*===============================*\
-|* QUOTE STYLEING
+|* QUOTE STYLING
 \*===============================*/
 
 blockquote {
