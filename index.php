@@ -5,6 +5,7 @@
 	<?include("includes/head.html");?>
 </head>
 <body>
+	<!-- THIS WRAPS ALL THE CONTENT -->
 	<div class="wrapper">
 		<?include("includes/navbar.html");?>
 		<div class="spacer-lg"><h1>Welcome To My  127.0.0.1</h1></div>
@@ -15,11 +16,13 @@
 					<h2>Origins</h2>
 					<sub>A brief history of the universe and more specifically this site.</sub>
 				</div>
+				<!-- ARTICLE BODY -->
 				<p>This website was the product of hard work and a passion for design.</p>
 				<p>Well, while this is true, it was mostly just fun.</p>
 				<p>I love making things, and making them right. I enjoy designing sleek content, just like this site, but I also have fun getting down and dirty with C. I used to use Python for everything but have since discovered the power of Bash.</p>
 			</article>
 		</div>
+		<!-- THIS PUSHES THE FOOTER DOWN TO THE BOTTOM OF THE SCREEN -->
 		<div class="push"></div>
 	</div>
 	<?include("includes/footer.html");?>

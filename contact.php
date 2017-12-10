@@ -27,6 +27,7 @@
 	<?include("includes/head.html");?>
 </head>
 <body>
+	<!-- THIS WRAPS ALL THE CONTENT -->
 	<div class="wrapper">
 		<?include("includes/navbar.html");?>
 		<div class="spacer-lg"><h1>
@@ -36,7 +37,7 @@
 					// $date = date('Y-H-i-s');
 					// $contents =  $date . $endl;
 					// $contents .= 'IP : ' . ip() . $endl;
-					// $contents .= 'FROM : ' . ($_POST['email'] ? $_POST['email'] : 'UNKNOWN') . $endl; 
+					// $contents .= 'FROM : ' . ($_POST['email'] ? $_POST['email'] : 'UNKNOWN') . $endl;
 					// $contents .= "--- START MESSAGE ---" . $endl;
 					// $contents .= ($_POST['message'] ? $_POST['message'] : 'NONE') . $endl;
 					// if (!is_dir('./messages')){
@@ -47,7 +48,7 @@
 				} else {
 					echo("Gmail Is The New Email");
 				}
-			?>	
+			?>
 		</h1></div>
 		<div class="divider"><span>I say all publicity is good publicity, except spam!</span></div>
 		<div class="main">
@@ -56,6 +57,7 @@
 					<h2>Contact</h2>
 					<sub>If you have any comments, concerns, or death threats, those go here.</sub>
 				</div>
+				<!-- ARTICLE BODY -->
 				<form id="contact-form" method="POST">
 					<input type="email" name="email" placeholder="Email (optional)">
 					<textarea spellcheck="false" name="message" class="msg-input" placeholder="Type your heart out!"></textarea>
@@ -63,6 +65,7 @@
 				</form>
 			</article>
 		</div>
+		<!-- THIS PUSHES THE FOOTER DOWN TO THE BOTTOM OF THE SCREEN -->
 		<div class="push"></div>
 	</div>
 	<?include("includes/footer.html");?>
