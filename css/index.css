@@ -111,11 +111,11 @@ h1, h2, h3, h4, h5, h6 {
 |* ACTIVE HEADER STYLING
 \*===============================*/
 [data-nav="localhost"] .navbar a#localhost, [data-nav="photography"] .navbar a#photography, [data-nav="about"] .navbar a#about, [data-nav="contact"] .navbar a#contact {
-  font-weight: bold; }
+  font-weight: bold;
+  pointer-events: none; }
   @media (max-width: 455px) {
     [data-nav="localhost"] .navbar a#localhost, [data-nav="photography"] .navbar a#photography, [data-nav="about"] .navbar a#about, [data-nav="contact"] .navbar a#contact {
       /* STYLING FOR SMALL SCREENS */
-      pointer-events: none;
       cursor: default;
       display: block;
       position: absolute;
