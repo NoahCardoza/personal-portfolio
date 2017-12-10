@@ -138,6 +138,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 46px;
     height: 42px;
     /* PLACE IT OVER THE HAMBURGER */
+    z-index: 101;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -178,6 +179,13 @@ h1, h2, h3, h4, h5, h6 {
           **/
           z-index: 150;
           display: block; }
+        .navbar input:checked ~ div span:first-child {
+          /* TURN HAMBURGER INTO AN X */
+          transform: translateY(13px) rotate(45deg); }
+        .navbar input:checked ~ div span:nth-child(2) {
+          opacity: 0; }
+        .navbar input:checked ~ div span:last-child {
+          transform: translateY(-13px) rotate(-45deg); }
       .navbar a {
         /* HIDE HEADER ELEMENTS */
         display: none; } }

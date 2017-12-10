@@ -199,6 +199,7 @@ h1, h2, h3, h4, h5, h6 {
 		width: 46px;
 		height: 42px;
 		/* PLACE IT OVER THE HAMBURGER */
+		z-index: z-index('navigation') + 1;
 		position: absolute;
 		top: 0px;
 		left: 0px;
@@ -243,6 +244,18 @@ h1, h2, h3, h4, h5, h6 {
 					**/
 					z-index: z-index('nav-link');
 					display: block;
+			}
+			&	~ div span {
+				&:first-child {
+					/* TURN HAMBURGER INTO AN X */
+					transform: translateY(13px) rotate(45deg);
+				}
+				&:nth-child(2) {
+					opacity: 0;
+				}
+				&:last-child {
+					transform: translateY(-13px) rotate(-45deg);
+				}
 			}
 		}
 
