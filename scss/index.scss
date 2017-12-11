@@ -2,13 +2,13 @@
 |* SCSS VARIABLES
 \*===============================*/
 /*===============================*\
-|*| $background-color	: #242424;
+|*| $background-color : #242424;
 |*| $text-color				: #fff;
 |*|
 |*| $pink					: #fd5382;
-|*| $pink-lighter	: #fab9d7;
+|*| $pink-lighter : #fab9d7;
 |*|
-|*| $purple	: #6d0095;
+|*| $purple : #6d0095;
 |*| $green	: #009587;
 |*| $blue		: #00dcff;
 |*| $grey		: #333233;
@@ -16,51 +16,43 @@
 |*| $transparent-lighten: rgba(255, 255, 255, 0.05);
 |*|
 |*| $border-radius	: 3px;
-|*| $border-width		: 2px;
+|*| $border-width 	: 2px;
 |*| $nav-hight			: 15px;
 |*|
 |*| $z-layers: (
-|*| 	modal  			        : 200,
-|*| 	nav-link 		        : 150,
-|*| 	navigation          : 100,
-|*| 	divider				      : 90,
-|*| 	footer				      : 80,
-|*| 	triangle			      : 60,
-|*| 	navigation-rainbow	: 50,
+|*| 	navigation	: 30,
+|*| 	divider 		: 20,
+|*| 	footer			: 10,
 |*| );
 \*===============================*/
 
 @import "include-media";
 
-$background-color	: #242424;
-$text-color				: #fff;
+$background-color : #242424;
+$text-color 			: #fff;
 
-$pink					: #fd5382;
-$pink-lighter	: #fab9d7;
+$pink 				: #fd5382;
+$pink-lighter : #fab9d7;
 
-$purple	: #6d0095;
+$purple : #6d0095;
 $green	: #009587;
-$blue		: #00dcff;
-$grey		: #333233;
+$blue 	: #00dcff;
+$grey 	: #333233;
 
 $transparent-lighten: rgba(255, 255, 255, 0.05);
 
 $border-radius	: 3px;
-$border-width		: 2px;
+$border-width 	: 2px;
 $nav-hight			: 15px;
 
 $z-layers: (
-	modal  			        : 200,
-	nav-link 		        : 150,
-	navigation          : 100,
-	divider				      : 90,
-	footer				      : 80,
-	triangle			      : 60,
-	navigation-rainbow	: 50,
+	navigation	: 30,
+	divider			: 20,
+	footer			: 10,
 );
 
 @function z-index($layer) {
-  @return map-get($z-layers, $layer);
+	@return map-get($z-layers, $layer);
 }
 
 
@@ -80,10 +72,10 @@ $z-layers: (
 }
 
 @mixin transition($transition...) {
-  -moz-transition:    $transition;
-  -o-transition:      $transition;
-  -webkit-transition: $transition;
-  transition:         $transition;
+	-moz-transition:    $transition;
+	-o-transition:      $transition;
+	-webkit-transition: $transition;
+	transition:         $transition;
 }
 
 /*===============================*\
@@ -171,7 +163,7 @@ h1, h2, h3, h4, h5, h6 {
 
 [data-nav="localhost"] .navbar a#localhost, [data-nav="photography"] .navbar a#photography, [data-nav="about"] .navbar a#about, [data-nav="contact"] .navbar a#contact{
 	font-weight: bold;
-	pointer-events: none;
+	// pointer-events: none; (not a standard W3C property != teacher happy )
 	@include media('<=455px'){ /* STYLING FOR SMALL SCREENS */
 		cursor: default;
 		display: block;
@@ -248,7 +240,7 @@ h1, h2, h3, h4, h5, h6 {
 					 * ABOVE THE CHECKBOX SO THEY
 					 * CAN BE CLICKED.
 					**/
-					z-index: z-index('nav-link');
+					z-index: z-index('navigation') + 1;
 					display: block;
 			}
 			&	~ div span {
@@ -362,7 +354,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 
 	& > .instagram-media-registered, > .instagram-media {
-    /* PHOTOGRAPHY => INSTAGRAM */
+		/* PHOTOGRAPHY => INSTAGRAM */
 		max-width: 800px!important;
 		min-width: 200px!important;
 	}
@@ -452,18 +444,18 @@ textarea {
 
 blockquote {
 	margin: 0;
-	&:before { content: open-quote; }
-	&:after { content: close-quote; }
+	&:before {	content: open-quote;		}
+	&:after  {	content: close-quote;		}
 }
-	/* LARGE QUOTES */
-	.qt-lg {
-		blockquote { font-size: 2em; }
-		cite {
-			margin-top: 0.1em;
-			margin-left: 2em;
-			float: left;
-			&:before {
-				content: '— ';
-			}
+/* LARGE QUOTES */
+.qt-lg {
+	blockquote { font-size: 2em; }
+	cite {
+		margin-top: 0.1em;
+		margin-left: 2em;
+		float: left;
+		&:before {
+			content: '— ';
 		}
+	}
 }

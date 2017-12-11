@@ -3,13 +3,13 @@
 |* SCSS VARIABLES
 \*===============================*/
 /*===============================*\
-|*| $background-color	: #242424;
+|*| $background-color : #242424;
 |*| $text-color				: #fff;
 |*|
 |*| $pink					: #fd5382;
-|*| $pink-lighter	: #fab9d7;
+|*| $pink-lighter : #fab9d7;
 |*|
-|*| $purple	: #6d0095;
+|*| $purple : #6d0095;
 |*| $green	: #009587;
 |*| $blue		: #00dcff;
 |*| $grey		: #333233;
@@ -17,17 +17,13 @@
 |*| $transparent-lighten: rgba(255, 255, 255, 0.05);
 |*|
 |*| $border-radius	: 3px;
-|*| $border-width		: 2px;
+|*| $border-width 	: 2px;
 |*| $nav-hight			: 15px;
 |*|
 |*| $z-layers: (
-|*| 	modal  			        : 200,
-|*| 	nav-link 		        : 150,
-|*| 	navigation          : 100,
-|*| 	divider				      : 90,
-|*| 	footer				      : 80,
-|*| 	triangle			      : 60,
-|*| 	navigation-rainbow	: 50,
+|*| 	navigation	: 30,
+|*| 	divider 		: 20,
+|*| 	footer			: 10,
 |*| );
 \*===============================*/
 /*===============================*\
@@ -111,8 +107,7 @@ h1, h2, h3, h4, h5, h6 {
 |* ACTIVE HEADER STYLING
 \*===============================*/
 [data-nav="localhost"] .navbar a#localhost, [data-nav="photography"] .navbar a#photography, [data-nav="about"] .navbar a#about, [data-nav="contact"] .navbar a#contact {
-  font-weight: bold;
-  pointer-events: none; }
+  font-weight: bold; }
   @media (max-width: 455px) {
     [data-nav="localhost"] .navbar a#localhost, [data-nav="photography"] .navbar a#photography, [data-nav="about"] .navbar a#about, [data-nav="contact"] .navbar a#contact {
       /* STYLING FOR SMALL SCREENS */
@@ -131,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
 \*===============================*/
 .navbar {
   background-color: #333233;
-  z-index: 100;
+  z-index: 30;
   position: fixed;
   width: 100%;
   top: 0;
@@ -144,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 46px;
     height: 42px;
     /* PLACE IT OVER THE HAMBURGER */
-    z-index: 101;
+    z-index: 31;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -183,7 +178,7 @@ h1, h2, h3, h4, h5, h6 {
            * ABOVE THE CHECKBOX SO THEY
            * CAN BE CLICKED.
           **/
-          z-index: 150;
+          z-index: 31;
           display: block; }
         .navbar input:checked ~ div span:first-child {
           /* TURN HAMBURGER INTO AN X */
@@ -251,7 +246,7 @@ h1, h2, h3, h4, h5, h6 {
 .divider {
   position: relative;
   text-align: center;
-  z-index: 90;
+  z-index: 20;
   display: flex;
   align-items: center;
   justify-content: center;
