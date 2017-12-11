@@ -41,6 +41,18 @@
             <li>C</li>
           </ul>
         </article>
+        <article>
+          <div class='title'>
+            <h2>Recent Projects</h2>
+            <sub>Life, among other things...</sub>
+          </div>
+          <!-- ARTICLE BODY -->
+          <br>
+          <h3><a href="https://github.com/NoahCardoza/">GitHub</a></h3>
+          <p>This is where I host a few of my smaller projects (including this site!). Feel free to check out the source code! Although there isn't much of a backend.</p>
+          <h3><a href="https://github.com/NoahCardoza/">BOT.net</a></h3>
+          <p>This is a little side project I and a friend have been working on for the past few months. Progress has been slow since we both have school but with winter break coming up, we hope to get back to work!</p>
+        </article>
       </div>
       <!-- THIS PUSHES THE FOOTER DOWN TO THE BOTTOM OF THE SCREEN -->
       <div class="push"></div>
