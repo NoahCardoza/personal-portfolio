@@ -21,9 +21,9 @@
 |*| $nav-hight			: 15px;
 |*|
 |*| $z-layers: (
-|*| 	navigation	: 30,
-|*| 	divider 		: 20,
-|*| 	footer			: 10,
+|*| 	spacer,
+|*| 	divider,
+|*| 	navigation,
 |*| );
 \*===============================*/
 /*===============================*\
@@ -126,7 +126,7 @@ h1, h2, h3, h4, h5, h6 {
 \*===============================*/
 .navbar {
   background-color: #333233;
-  z-index: 30;
+  z-index: 4;
   position: fixed;
   width: 100%;
   top: 0;
@@ -139,7 +139,7 @@ h1, h2, h3, h4, h5, h6 {
     width: 46px;
     height: 42px;
     /* PLACE IT OVER THE HAMBURGER */
-    z-index: 31;
+    z-index: 5;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -178,7 +178,7 @@ h1, h2, h3, h4, h5, h6 {
            * ABOVE THE CHECKBOX SO THEY
            * CAN BE CLICKED.
           **/
-          z-index: 31;
+          z-index: 5;
           display: block; }
         .navbar input:checked ~ div span:first-child {
           /* TURN HAMBURGER INTO AN X */
@@ -216,7 +216,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: center;
   position: relative;
-  z-index: 1; }
+  z-index: 2; }
   [class*="spacer-"]:before {
     -moz-transition: opacity 1s;
     -o-transition: opacity 1s;
@@ -246,7 +246,7 @@ h1, h2, h3, h4, h5, h6 {
 .divider {
   position: relative;
   text-align: center;
-  z-index: 20;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;

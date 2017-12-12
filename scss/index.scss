@@ -20,11 +20,13 @@
 |*| $nav-hight			: 15px;
 |*|
 |*| $z-layers: (
-|*| 	navigation	: 30,
-|*| 	divider 		: 20,
-|*| 	footer			: 10,
+|*| 	spacer,
+|*| 	divider,
+|*| 	navigation,
 |*| );
 \*===============================*/
+
+
 
 @import "include-media";
 
@@ -46,13 +48,13 @@ $border-width 	: 2px;
 $nav-hight			: 15px;
 
 $z-layers: (
-	navigation	: 30,
-	divider			: 20,
-	footer			: 10,
+	spacer,
+	divider,
+	navigation,
 );
 
 @function z-index($layer) {
-	@return map-get($z-layers, $layer);
+	@return index($z-layers, $layer) + 1;
 }
 
 
@@ -184,7 +186,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar {
 	@extend %box-shadow;
 	background-color: $grey;
-	z-index: z-index('navigation');
+	z-index: z-index(navigation);
 	position: fixed;
 	width: 100%;
 	top: 0;
@@ -197,7 +199,7 @@ h1, h2, h3, h4, h5, h6 {
 		width: 46px;
 		height: 42px;
 		/* PLACE IT OVER THE HAMBURGER */
-		z-index: z-index('navigation') + 1;
+		z-index: z-index(navigation) + 1;
 		position: absolute;
 		top: 0px;
 		left: 0px;
@@ -240,7 +242,7 @@ h1, h2, h3, h4, h5, h6 {
 					 * ABOVE THE CHECKBOX SO THEY
 					 * CAN BE CLICKED.
 					**/
-					z-index: z-index('navigation') + 1;
+					z-index: z-index(navigation) + 1;
 					display: block;
 			}
 			&	~ div span {
@@ -292,7 +294,7 @@ h1, h2, h3, h4, h5, h6 {
 	align-items: center;
 	justify-content: center;
 	position: relative;
-	z-index: 1;
+	z-index: z-index(spacer);
 	&:before {
 		@include transition(opacity 1s);
 		z-index: -1;
@@ -323,7 +325,7 @@ h1, h2, h3, h4, h5, h6 {
 .divider {
 	position: relative;
 	text-align: center;
-	z-index: z-index('divider');
+	z-index: z-index(divider);
 	display: flex;
 	align-items: center;
 	justify-content: center;
