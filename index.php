@@ -21,11 +21,11 @@
 				<p>Well, while this is true, it was mostly just fun.</p>
 				<p>I love making things and making them right. I enjoy designing sleek content, just like this site, but I also have fun getting down and dirty with C. I used to use Python for everything but have since discovered the power of Bash.</p>
 				<h4>The product of long hours and meticulous work.</h4>
-				<p>I created this site as a CIS project to fulfill my class requirements for my <a href="https://www.deanza.edu/publications/catalog/search/schdetail.html?detailNum=CIS89A17-18">CIS 89A</a> Web Page Development course.</p>
-				<p>Everything was created from scratch by yours truly. I designed the concept, color scheme, and logo my self. I had dabbled in the Adobe Production Suite when I interned as a photographer back in 2015 with <a target="_blank" href="https://onyxpictures.com/">ONYX Pictures</a>. I am pretty handndy in that area. I am also an avid lover of modern design and clean code. I used to despise <a href="https://www.w3schools.com/css/css_intro.asp">CSS</a> (I still do) but <a href="http://sass-lang.com/">SCSS</a> makes everything easier.</p>
+				<p>I created this site as a CIS project to fulfill my class requirements for my <a target="_blank" href="https://www.deanza.edu/publications/catalog/search/schdetail.html?detailNum=CIS89A17-18">CIS 89A</a> Web Page Development course.</p>
+				<p>Everything was created from scratch by yours truly. I designed the concept, color scheme, and logo my self. I had dabbled in the Adobe Production Suite when I interned as a photographer back in 2015 with <a target="_blank" href="https://onyxpictures.com/">ONYX Pictures</a>. I am pretty handndy in that area. I am also an avid lover of modern design and clean code. I used to despise <a target="_blank" href="https://www.w3schools.com/css/css_intro.asp">CSS</a> (I still do) but <a target="_blank" href="http://sass-lang.com/">SCSS</a> makes everything easier.</p>
 				<h4>My free time.</h4>
 				<p>In my spare time, I code to my hearts content.</p>
-				<p>I also started a <a href="https://discord.gg/96jKkqY">Discord</a> server a while back in the hopes of passing my knowledge and love of code on to others!</p>
+				<p>I also started a <a target="_blank" href="https://discord.gg/96jKkqY">Discord</a> server (<b>MacHacker&num;7322</b> A.K.A. <b>Pylon</b>) a while back in the hopes of passing my knowledge and love of code on to others!</p>
 			</article>
 		</div>
 		<!-- THIS PUSHES THE FOOTER DOWN TO THE BOTTOM OF THE SCREEN -->
