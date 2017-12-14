@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Table Test</title>
+    <style media="screen">
+    thead, td:first-child {
+      font-weight: bold;
+    }
+    thead td:nth-child(7){
+      text-align: center;
+    }
+    td:nth-child(n+2):nth-child(-n+6){
+      text-align: right;
+    }
+    </style>
+  </head>
+  <body>
+    <table border="1" title="Pull down to show history.">
+      <thead>
+        <tr>
+          <td>Numbers</td>
+          <td>1st</td>
+          <td>2nd</td>
+          <td>3rd</td>
+          <td>4th</td>
+          <td>5th</td>
+          <td>Notes</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Fibonacci</td>
+          <td>0</td>
+          <td>1</td>
+          <td>1</td>
+          <td>2</td>
+          <td>3</td>
+          <td>Each number from the third onwards is the sum of the two preceding it.</td>
+        </tr>
+        <tr>
+          <td>Perfect</td>
+          <td>6</td>
+          <td>28</td>
+          <td>496</td>
+          <td>8128</td>
+          <td>33550336</td>
+          <td>The sum of the number's proper divisors equals the number. Thus, 1+2+4+7+14=28.</td>
+        </tr>
+        <tr>
+          <td>Prime</td>
+          <td>2</td>
+          <td>3</td>
+          <td>5</td>
+          <td>7</td>
+          <td>11</td>
+          <td>Prime numbers have no divisors other than 1 and themselves.</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</html>
